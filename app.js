@@ -1,4 +1,4 @@
-const Server = require('./core/server')
+const Server = require('./core/server') //  importa la clase Server que está en la carpeta /core
 
-const servidor = new Server()
-servidor.listen()
+const servidor = new Server() //  crea una instancia del servidor
+servidor.listen()// lo arranca y empieza a escuchar peticiones

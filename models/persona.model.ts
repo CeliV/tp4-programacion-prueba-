@@ -43,3 +43,4 @@ export class PersonaModel {
     }
   }
 }
+module.exports = { PersonaModel }

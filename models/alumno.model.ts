@@ -1,49 +1,58 @@
-// Define cómo es un alumno con tipos (number, string, boolean)
-/*El método validar recibe los datos del body y verifica que estén bien. 
-Si algo falla devuelve un mensaje de error, si todo está bien devuelve null*/
-class Alumno {
-    legajo: number
-    nombre: string
-    apellido: string
-    email: string
-    fechaAlta: string
-    modificacion: string
-    isActive: boolean
+const { PersonaModel } = require('./persona.model')
+
+class AlumnoModel extends PersonaModel {
+    private legajo: number
+    private fechaAlta: string
+    private modificacion: string
+    private isActive: boolean
 
     constructor (
-        legajo: number,
         nombre: string,
-        apellido: string,
+        apellido: string,   
         email: string,
-        fechaAlta: string,
-        modificacion: string,
-        isActive: boolean
+        legajo: number,
+        fechaAlta: string = new Date().toISOString().split('T')[0],
+        modificacion: string = new Date().toISOString().split('T')[0],
+        isActive: boolean = true
     ) {
+        super(nombre, apellido, email)
         this.legajo = legajo
-        this.nombre = nombre
-        this.apellido = apellido
-        this.email = email
         this.fechaAlta = fechaAlta
         this.modificacion = modificacion
         this.isActive = isActive
     }
 
-    // valida que los campos obligatorios no estén vacíos
-    static validar (data: any): string | null {
-        if (!data.nombre || typeof data.nombre !== 'string') {
-        return 'El nombre es obligatorio y debe ser texto'
+    public getLegajo (): number {
+        return this.legajo
+    }
+
+    public getIsActive (): boolean {
+        return this.isActive
+    }
+
+    public setIsActive (status: boolean): void {
+        this.isActive = status
+    }
+
+    public getModificacion (): string {
+        return this.modificacion
+    }
+
+    public setModificacion (fecha: string): void {
+        this.modificacion = fecha
+    }
+
+    public getAllAttributes () {
+        return {
+        legajo: this.legajo,
+        nombre: this.nombre,
+        apellido: this.apellido,
+        email: this.email,
+        fechaAlta: this.fechaAlta,
+        modificacion: this.modificacion,
+        isActive: this.isActive
         }
-        if (!data.apellido || typeof data.apellido !== 'string') {
-        return 'El apellido es obligatorio y debe ser texto'
-        }
-        if (!data.email || typeof data.email !== 'string') {
-        return 'El email es obligatorio y debe ser texto'
-        }
-        if (!data.email.includes('@')) {
-        return 'El email no es válido'
-        }
-        return null
     }
     }
 
-module.exports = Alumno
+    module.exports = { AlumnoModel }

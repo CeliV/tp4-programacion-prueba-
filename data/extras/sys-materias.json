@@ -1,10 +1,9 @@
 [
   {
     "idMateria": "MAT101",
-    "nombre": "Matemática I",
-    "cuatrimestre": 1
+    "nombre": "Programación II",
+    "cuatrimestre": 2
   },
-
   {
     "idMateria": "PROG1",
     "nombre": "Programación I",

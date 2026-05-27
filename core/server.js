@@ -18,6 +18,9 @@ class Server {
 
   rutas() {
     this.app.use('/alumnos', require('../routes/alumno.routes'))
+    this.app.use('/profesores', require('../routes/extras/profesor.routes'))
+    this.app.use('/notas', require('../routes/extras/nota.routes'))
+    this.app.use('/materias', require('../routes/extras/materia.routes'))
 
     this.app.use((req, res, next) => {
       return res.status(400).json({ msg: 'Error.' })
@@ -31,7 +34,6 @@ class Server {
       return res.status(500).json({ msg: 'Internal Server Error' })
     })
   }
-
   listen() {
     this.app.listen(this.port, () => {
       console.log(`La API esta escuchando el el puerto: ${this.port}`)

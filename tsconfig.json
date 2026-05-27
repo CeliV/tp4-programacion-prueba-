@@ -1,5 +1,6 @@
 // para configurar TypeScript correctamente
 
+
 {
     "compilerOptions": {
         "module": "commonjs",
@@ -7,7 +8,8 @@
         "esModuleInterop": true,
         "strict": false,
         "outDir": "./dist",
-        "types": ["node"]
+        "types": ["node"],
+        "isolatedModules": false
     },
     "include": ["**/*.ts"],
     "exclude": ["node_modules"]

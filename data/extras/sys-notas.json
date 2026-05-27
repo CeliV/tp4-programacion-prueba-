@@ -1,12 +1,5 @@
 [
   {
-    "id": 1,
-    "legajo": 10001,
-    "idMateria": "MAT101",
-    "nota": 9,
-    "fecha": "03-04-24"
-  },
-  {
     "id": 2,
     "legajo": 10001,
     "idMateria": "PROG1",
@@ -173,5 +166,12 @@
     "idMateria": "PROG1",
     "nota": 10,
     "fecha": "01-07-24"
+  },
+  {
+    "id": 26,
+    "legajoAlumno": 10001,
+    "materia": "Programación",
+    "nota": 9,
+    "fecha": "2026-05-27"
   }
 ]

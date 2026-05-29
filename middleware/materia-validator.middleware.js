@@ -19,3 +19,5 @@ const validateInputMateria = (req, res, next) => {
 }
 
 module.exports = { validateInputMateria }
+
+// dao y dto buscarlo trabajo con capas 
